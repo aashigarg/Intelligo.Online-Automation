@@ -1,0 +1,167 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Udemy" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_dtUdemy" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="in_coursename" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>759,1744</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Udemy_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="42">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Udemy" sap:VirtualizedContainerService.HintSize="536,1679" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="inputCourseUdemy" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[New system.data.DataTable]" Name="dt_Udemy" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="494,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[inputCourseUdemy]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_coursename]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="494,765" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" ContinueOnError="True" DisplayName="Open https://www.udemy.com/" sap:VirtualizedContainerService.HintSize="452,673" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.udemy.com/">
+        <ui:OpenBrowser.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="418,574" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,420" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  header-search-fi...'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[inputCourseUdemy]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="319f4cb5f979779698d674f9cb960839" Selector="&lt;webctrl id='header-search-field' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'INPUT  header-search-fi...'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+                  <ui:SendHotkey.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2a409798b4117bea98dd171eb854c0dd" Selector="&lt;webctrl id='header-search-field' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:SendHotkey.Target>
+                </ui:SendHotkey>
+              </Sequence>
+            </Sequence>
+          </ActivityAction>
+        </ui:OpenBrowser.Body>
+      </ui:OpenBrowser>
+    </Sequence>
+    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="494,682" sap2010:WorkflowViewState.IdRef="Sequence_11">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'OnlineCou Page'" sap:VirtualizedContainerService.HintSize="434,590" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="84c2417df94efe3f90bd22100246b897" Selector="&lt;html app='chrome.exe' url='*' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,444" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[dt_Udemy]" DisplayName="Extract Structured Data 'BODY  udemy'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' class='main-content-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='main-content' idx='1'/&gt;&lt;webctrl tag='div' class='ud-app-loader ud-component--search--search ud-app-loaded' idx='1'/&gt;&lt;webctrl tag='div' class='udlite-container udlite-page-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='course-directory--container--5ZPhr' idx='1'/&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;webctrl tag='div' class='filter-panel--filtered-paginated-course-list--2oGVh' idx='1'/&gt;&lt;webctrl tag='div' class='filter-panel--filtered-course-list--SD4_5' idx='1'/&gt;&lt;webctrl tag='div' class='filter-panel--paginated-course-list--2F0x1' idx='1'/&gt;&lt;webctrl tag='div' class='course-list--container--3zXPS' idx='1'/&gt;&lt;webctrl tag='a' class='udlite-custom-focus-visible course-card--container--3w8Zm course-card--large--1BVxY'/&gt;&lt;webctrl tag='div' class='course-card--main-content--3xEIw' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='Course Name' attr='text' name2='Course URL' attr2='href'&gt;&lt;webctrl tag='div' class='main-content-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='main-content' idx='1'/&gt;&lt;webctrl tag='div' class='ud-app-loader ud-component--search--search ud-app-loaded' idx='1'/&gt;&lt;webctrl tag='div' class='udlite-container udlite-page-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='course-directory--container--5ZPhr' idx='1'/&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;webctrl tag='div' class='filter-panel--filtered-paginated-course-list--2oGVh' idx='1'/&gt;&lt;webctrl tag='div' class='filter-panel--filtered-course-list--SD4_5' idx='1'/&gt;&lt;webctrl tag='div' class='filter-panel--paginated-course-list--2F0x1' idx='1'/&gt;&lt;webctrl tag='div' class='course-list--container--3zXPS' idx='1'/&gt;&lt;webctrl tag='a' class='udlite-custom-focus-visible course-card--container--3w8Zm course-card--large--1BVxY'/&gt;&lt;webctrl tag='div' class='course-card--main-content--3xEIw' idx='1'/&gt;&lt;webctrl tag='div' class='udlite-heading-sm udlite-focus-visible-target course-card--course-title--2f7tE' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='School' attr='text'&gt;&lt;webctrl tag='div' class='main-content-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='main-content' idx='1'/&gt;&lt;webctrl tag='div' class='ud-app-loader ud-component--search--search ud-app-loaded' idx='1'/&gt;&lt;webctrl tag='div' class='udlite-container udlite-page-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='course-directory--container--5ZPhr' idx='1'/&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;webctrl tag='div' class='filter-panel--filtered-paginated-course-list--2oGVh' idx='1'/&gt;&lt;webctrl tag='div' class='filter-panel--filtered-course-list--SD4_5' idx='1'/&gt;&lt;webctrl tag='div' class='filter-panel--paginated-course-list--2F0x1' idx='1'/&gt;&lt;webctrl tag='div' class='course-list--container--3zXPS' idx='1'/&gt;&lt;webctrl tag='a' class='udlite-custom-focus-visible course-card--container--3w8Zm course-card--large--1BVxY'/&gt;&lt;webctrl tag='div' class='course-card--main-content--3xEIw' idx='1'/&gt;&lt;webctrl tag='div' class='udlite-text-xs course-card--instructor-list--lIA4f' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Course Desc' attr='text'&gt;&lt;webctrl tag='div' class='main-content-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='main-content' idx='1'/&gt;&lt;webctrl tag='div' class='ud-app-loader ud-component--search--search ud-app-loaded' idx='1'/&gt;&lt;webctrl tag='div' class='udlite-container udlite-page-wrapper' idx='1'/&gt;&lt;webctrl tag='div' class='course-directory--container--5ZPhr' idx='1'/&gt;&lt;webctrl tag='div' idx='1'/&gt;&lt;webctrl tag='div' class='filter-panel--filtered-paginated-course-list--2oGVh' idx='1'/&gt;&lt;webctrl tag='div' class='filter-panel--filtered-course-list--SD4_5' idx='1'/&gt;&lt;webctrl tag='div' class='filter-panel--paginated-course-list--2F0x1' idx='1'/&gt;&lt;webctrl tag='div' class='course-list--container--3zXPS' idx='1'/&gt;&lt;webctrl tag='a' class='udlite-custom-focus-visible course-card--container--3w8Zm course-card--large--1BVxY'/&gt;&lt;webctrl tag='div' class='course-card--main-content--3xEIw' idx='1'/&gt;&lt;webctrl tag='div' class='price-text--container--Ws-fP course-card--price-text-container--2sb8G' idx='1'/&gt;&lt;webctrl tag='div' class='price-text--price-part--Tu6MH course-card--discount-price--3TaBk udlite-heading-md' idx='1'/&gt;&lt;webctrl tag='span' idx='2'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_5" MaxNumberOfResults="1" SimulateClick="True">
+                <ui:ExtractData.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="56f88ccaf0c87a56e6ace2fa9d40a74a" Selector="&lt;webctrl tag='BODY' /&gt;" TimeoutMS="50000" WaitForReady="COMPLETE" />
+                </ui:ExtractData.Target>
+              </ui:ExtractData>
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="sd:DataTable">[out_dtUdemy]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="sd:DataTable">[dt_Udemy]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'chrome.exe Online'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseWindow_3" InformativeScreenshot="a86fccf8856fc7810f3570399499a49b" Selector="&lt;html app='chrome.exe' title='Online Courses - Anytime, Anywhere | Udemy' /&gt;" WaitForReady="INTERACTIVE" />
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+    </Sequence>
+  </Sequence>
+</Activity>
